@@ -4,6 +4,7 @@ import 'package:flutter_compte/models/transaction.dart';
 import 'package:flutter_compte/models/type_transaction.dart';
 import 'package:flutter_compte/views/layout/layout.dart';
 import 'package:flutter_compte/views/pages/compte/widgets/compte_item.dart';
+import 'package:flutter_compte/views/pages/transactions/transaction_form.dart';
 import 'package:flutter_compte/views/pages/transactions/widgets/transaction_item.dart';
 
 class TransactionCompteList extends StatefulWidget {
@@ -41,7 +42,12 @@ class _TransactionCompteListState extends State<TransactionCompteList> {
                      }),)
 
                 ]   
-             ) 
+             ) , 
+               onLoadForm: (){
+                  Navigator.push(context,
+                  MaterialPageRoute(builder:(context) => TransactionForm(compte: compte),
+                  ));
+              }
     );
   }
 }

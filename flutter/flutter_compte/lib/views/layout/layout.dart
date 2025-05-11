@@ -4,7 +4,8 @@ import 'package:flutter_compte/views/layout/widgets/menu_item.dart';
 class LayoutScreen extends StatefulWidget {
   final Widget contentPage;
   final String title;
-  const LayoutScreen({super.key,required this.contentPage,required this.title});
+  final Function? onLoadForm;
+  const LayoutScreen({super.key,required this.contentPage,required this.title,this.onLoadForm});
 
   @override
   State<LayoutScreen> createState() => _LayoutScreeState();
@@ -84,11 +85,16 @@ class _LayoutScreeState extends State<LayoutScreen> {
             BottomNavigationBarItem(icon: Icon(Icons.abc_sharp),label:"Historiques" )
             ],
         ),
-
-        floatingActionButton: FloatingActionButton(
+     
+         floatingActionButton: FloatingActionButton(
           onPressed: () {
-             Navigator.pushNamed(context, "form");
+            if(widget.onLoadForm!=null){
+                  widget.onLoadForm!();
+            }
+            
         },child: const Icon(Icons.add),),
+ 
+       
 
     );;
   }

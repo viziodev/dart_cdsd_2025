@@ -30,64 +30,81 @@ class _FormCompteState extends State<FormCompte> {
     return LayoutScreen(
             title: "Nouveau Compte",
             contentPage: Padding(
-            padding: const EdgeInsets.all(20.0),
-            child: Form(
-                 key: _formKey,
-                  child: Column(
+            padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 150),
+            child: Card(
+              color: Colors.white,
+              child: Padding(
+                padding: const EdgeInsets.all(12.0),
+                child: Column(
                   children: [
-                     TextFormField(
-                      controller: _numeroController,
-                      decoration: const InputDecoration(
-                        labelText: "Numero",
-                          border: OutlineInputBorder()
-                      ),
-                      validator: (value){
-                        if (value==null || value.isEmpty) {
-                          return "Veuillez saisir un numero";
-                        }
-                        return null;
-          
-                      } ,
-                     ),
-                     const  SizedBox(height: 20,),
-                     TextFormField(
-                      controller: _soldeController,
-                      decoration: const InputDecoration(
-                         labelText: "Solde",
-                          border: OutlineInputBorder()
-                      ),
-                      keyboardType: TextInputType.number,
-                      validator: (value){
-                        if (value==null || value.isEmpty) {
-                          return "Veuillez saisir le solde du compte";
-                        }
-                         if (double.tryParse(value)==null) {
-                          return "Veuillez saisir un nombre";
-                         }
-                        return null;
-          
-                      }
-                     ),
+                    const Text("Formulaire Creation de Compte",
+                    style: TextStyle(
+                               color: Colors.black,
+                               fontSize: 18,
+                               fontStyle: FontStyle.italic,
+                               fontWeight: FontWeight.bold
+                         )),
                     const  SizedBox(height: 20,),
-                     SizedBox(
-                      height: 60,
-                      width: double.infinity,
-                       child: ElevatedButton(
-                       onPressed:() {
-                           _saveCompte();
-                        },
-                       child: const Text("Creer un Compte",
-                            style:TextStyle(
-                                 fontSize: 20
-                           ))),
-                     )
-          
+                    Form(
+                      key: _formKey,
+                      child: Column(
+                          children: [
+                             TextFormField(
+                              controller: _numeroController,
+                              decoration: const InputDecoration(
+                                labelText: "Numero",
+                                  border: OutlineInputBorder()
+                              ),
+                              validator: (value){
+                                if (value==null || value.isEmpty) {
+                                  return "Veuillez saisir un numero";
+                                }
+                                return null;
+                              
+                              } ,
+                             ),
+                             const  SizedBox(height: 20,),
+                             TextFormField(
+                              controller: _soldeController,
+                              decoration: const InputDecoration(
+                                 labelText: "Solde",
+                                  border: OutlineInputBorder()
+                              ),
+                              keyboardType: TextInputType.number,
+                              validator: (value){
+                                if (value==null || value.isEmpty) {
+                                  return "Veuillez saisir le solde du compte";
+                                }
+                                 if (double.tryParse(value)==null) {
+                                  return "Veuillez saisir un nombre";
+                                 }
+                                return null;
+                              
+                              }
+                             ),
+                            const  SizedBox(height: 20,),
+                             SizedBox(
+                              height: 60,
+                              width: double.infinity,
+                               child: ElevatedButton(
+                               onPressed:() {
+                                   _saveCompte();
+                                },
+                               child: const Text("Creer un Compte",
+                                    style:TextStyle(
+                                         fontSize: 20
+                                   ))),
+                             )
+                              
+                          ],
+                              
+                          ),
+                    ),
                   ],
-          
-                  )
-                     
-                 ),
-          ),
+                ),
+              ),
+            ),
+                      ),
     );
   }
 

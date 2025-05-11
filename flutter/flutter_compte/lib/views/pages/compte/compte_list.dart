@@ -23,13 +23,16 @@ class _CompteListState extends State<CompteList> {
   @override
   Widget build(BuildContext context) {
     return LayoutScreen(
-      title: "Liste des Comptes",
-      contentPage:Column(
+           title: "Liste des Comptes",
+            contentPage:Column(
               children: List.generate(5,(index){
                   return  CompteItemList(
                     compte: Compte(id:index, numero: "NUM_$index",solde:index*10000  ),);
               }) 
-             ,) 
+             ,),
+             onLoadForm: (){
+                Navigator.pushNamed(context, "form");
+             },
     );
   }
 }

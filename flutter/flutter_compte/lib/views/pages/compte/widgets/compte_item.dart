@@ -13,10 +13,10 @@ class _CompteItemState extends State<CompteItem> {
   @override
   Widget build(BuildContext context) {
     return Card(
-                      margin: const EdgeInsets.symmetric(horizontal: 16,vertical: 8),
+                      margin: const EdgeInsets.symmetric(horizontal: 5,vertical: 8),
                       child:Container(
                            width: double.infinity,
-                           padding: const EdgeInsets.all(15),
+                           padding: const EdgeInsets.all(10),
                           child:  Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
