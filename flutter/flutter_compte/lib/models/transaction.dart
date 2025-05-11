@@ -8,7 +8,7 @@ class Transaction {
     String? numero;
     final DateTime? date;
     final double montant; 
-  TypeTransaction? type;
+    TypeTransaction? type;
   Transaction({
        required this.montant,
        int? id,
@@ -18,8 +18,8 @@ class Transaction {
      
   }):date=DateTime.now(),
      id=DateTime.now().microsecondsSinceEpoch, 
-     numero="TRANS_NUM_$id", 
-     type=TypeTransaction.depot; 
+     numero="TRANS_NUM_$id";
+    
  
 
   @override
@@ -38,11 +38,13 @@ class Transaction {
   }
 
   factory Transaction.fromMap(Map<String, dynamic> map) {
-    return Transaction(
-      id: map['id'] != null ? map['id'] as int : null,
-      numero: map['numero'] != null ? map['numero'] as String : null,
-      date: map['date'] != null ? DateTime.fromMillisecondsSinceEpoch(map['date'] as int) : null,
-      montant: map['montant'] as double,
+      print(TypeTransaction.getEnumByValue(map["type"].toString()));
+      return Transaction(
+      id:int.parse(map["id"]) ,
+      numero: map['numero'],
+      date:  DateTime.parse(map["date"]),
+      montant: double.parse(map["montant"].toString()) ,
+      type:TypeTransaction.getEnumByValue(map["type"].toString())!
     );
   }
 

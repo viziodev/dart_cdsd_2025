@@ -3,57 +3,24 @@
     {
       "id": "1",
       "numero": "Num_1",
-      "dateCreation": "2025-04-27T00:00:00.000",
+      "dateCreation": "2025-04-27",
       "solde": 290001,
       "transactions": [
         {
-          "id": 3,
+          "id": "3",
+          "numero": "Num_3",
           "date": "2025-04-27T00:00:00.000",
           "montant": 100000,
           "type": "Depot"
         },
         {
-          "id": 1,
+          "id": "1",
+          "numero": "Num_1",
           "date": "2025-05-11T09:19:06.083891",
           "montant": 100000,
-          "type": "Depot"
-        },
-        {
-          "id": 1,
-          "date": "2025-05-11T09:20:33.630321",
-          "montant": 100000,
-          "type": "Depot"
-        },
-        {
-          "id": 1,
-          "date": "2025-05-11T09:21:20.877719",
-          "montant": 100000,
-          "type": "Depot"
-        },
-        {
-          "id": 1,
-          "date": "2025-05-11T09:21:40.543966",
-          "montant": 100000,
-          "type": "Depot"
-        },
-        {
-          "id": 1,
-          "date": "2025-05-11T09:22:08.296974",
-          "montant": 199999,
-          "type": "Retrait"
-        },
-        {
-          "id": 1,
-          "date": "2025-05-11T09:24:20.218498",
-          "montant": 100000,
-          "type": "Depot"
-        },
-        {
-          "id": 1,
-          "date": "2025-05-11T09:26:04.505391",
-          "montant": 10000,
           "type": "Retrait"
         }
+       
       ]
     },
     {

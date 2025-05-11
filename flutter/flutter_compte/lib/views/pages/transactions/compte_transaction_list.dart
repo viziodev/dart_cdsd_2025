@@ -34,10 +34,10 @@ class _TransactionCompteListState extends State<TransactionCompteList> {
                       const SizedBox(height: 20,),
                       Column(
                       children: 
-                      List.generate(6,(index){
+                      List.generate(compte.transactions.length,(index){
                           return TransactionItem(
-                            transaction: Transaction(montant: (index+1)*10000 ,
-                            type: index%2==0?TypeTransaction.depot:TypeTransaction.retrait)
+                            transaction: Transaction(montant:compte.transactions[index].montant  ,
+                            type: compte.transactions[index].type)
                           );
                      }),)
 
