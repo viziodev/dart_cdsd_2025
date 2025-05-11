@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_compte/views/compte_form.dart';
 import 'package:flutter_compte/views/compte_list.dart';
+import 'package:flutter_compte/views/compte_transaction_list.dart';
 
 void main() {
   runApp(const MainApp());
@@ -17,8 +18,10 @@ class MainApp extends StatelessWidget {
         //  home: const CompteList(),
         initialRoute: "compte",
         routes: {
-          "compte":(context) =>  CompteList(),
-          "form":(context) => const FormCompte()
+          "compte":(context) =>  const CompteList(),
+          "form":(context) => const FormCompte(),
+          "transaction_list":(context) => const TransactionCompteList(),
+          
         },
           debugShowCheckedModeBanner: false,
     );

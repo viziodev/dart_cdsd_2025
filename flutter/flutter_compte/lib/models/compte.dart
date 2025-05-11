@@ -4,7 +4,7 @@ class Compte {
   late int id;
   late String numero;
   late DateTime dateCreation;
-  late double _montant; 
+  late double solde; 
 
   /*  Compte(int id,String numero,[DateTime? dateCreation,double montant=0]){
          this.id=id;
@@ -21,18 +21,17 @@ class Compte {
 
  */
 
-    Compte({required  this.id,required this.numero,DateTime? dateCreation,double montant=0})
-    :dateCreation=dateCreation??DateTime.now(),
-     _montant=montant;
+    Compte({required  this.id,required this.numero,required this.solde, DateTime? dateCreation})
+    :dateCreation=dateCreation??DateTime.now();
 
     //Factory Constructeur  Objet Convertit Model 
        // map⇒model
       factory Compte.fromMap(Map<String,dynamic> map){
          return Compte(
-           id:int.parse(map["id"]) ,
-           numero: map["numero"],
+            id:int.parse(map["id"]) ,
+            numero: map["numero"],
            dateCreation: DateTime.parse(map["date"]),
-            montant: double.parse(map["montant"] )  
+            solde: double.parse(map["solde"] )  
          );
            
       }
@@ -41,13 +40,13 @@ class Compte {
       return  {
          "id": "$id",
          "numero": numero,
-         "montant": "$_montant",
+         "solde": "$solde",
          "date": dateCreation.toIso8601String()
      };
      }
 
   @override
   String toString() {
-    return 'Compte(id: $id, numero: $numero, dateCreation: $dateCreation, _montant: $_montant)';
+    return 'Compte(id: $id, numero: $numero, dateCreation: $dateCreation, Solde : $solde)';
   }
 }

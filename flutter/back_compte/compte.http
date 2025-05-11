@@ -1,0 +1,53 @@
+
+GET http://localhost:3000/comptes
+content-type: application/json
+###
+POST http://localhost:3000/comptes
+content-type: application/json
+
+{
+      "id": 1,
+      "numero": "Num_1",
+      "solde": 0.0,
+      "dateCreation": "2025-04-27",
+      "transactions":[
+                {   
+                  "id":3,
+                   "date":"2025-04-27",
+                  "montant": 100000.0,
+                  "type":"Depot"
+                }
+      ]
+    
+  },
+###
+
+
+PUT http://localhost:3000/comptes/1
+content-type: application/json
+
+{
+      "id": 1,
+      "numero": "Num_1",
+      "solde": 0.0,
+      "dateCreation": "2025-04-27",
+      "transactions":[
+                {   
+                  "id":3,
+                   "date":"2025-04-27",
+                  "montant": 100000.0,
+                  "type":"Depot"
+                }
+      ]
+    
+    },
+
+
+   
+
+###
+GET http://localhost:3000/comptes/1
+content-type: application/json
+
+###
+
